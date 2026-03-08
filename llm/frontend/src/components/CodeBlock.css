@@ -1,0 +1,103 @@
+.code-block {
+  position: relative;
+  background-color: #1e293b;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  overflow: hidden;
+  border: 1px solid #334155;
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875em;
+  line-height: 1.5;
+  color: #e2e8f0;
+  overflow-x: auto;
+}
+
+.code-block code {
+  background: transparent;
+  color: inherit;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #60a5fa;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.75em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.copy-btn:hover {
+  background-color: #3b82f6;
+}
+
+.copy-btn:active {
+  background-color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .code-block {
+    padding: 12px;
+    margin: 12px 0;
+  }
+
+  .code-block pre {
+    font-size: 0.8em;
+  }
+
+  .copy-btn {
+    top: 6px;
+    right: 6px;
+    padding: 3px 6px;
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 480px) {
+  .code-block {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+  }
+
+  .code-block pre {
+    font-size: 0.75em;
+    padding: 0;
+  }
+
+  .copy-btn {
+    top: 4px;
+    right: 4px;
+    padding: 2px 4px;
+    font-size: 0.65em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .code-block {
+    padding: 18px;
+    margin: 18px 0;
+  }
+
+  .code-block pre {
+    font-size: 0.9em;
+  }
+
+  .copy-btn {
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 0.8em;
+  }
+}
