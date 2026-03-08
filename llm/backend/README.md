@@ -63,6 +63,8 @@ uvicorn app.main:app --reload
 ## LLM Abstraction
 The LLM Factory (`core/llm_factory.py`) selects the provider (Groq, OpenAI, etc.) at runtime. Add new providers by extending this module.
 
----
-
-> See code comments for further details on each module.
+## Local vs Non-Local LLM APIs
+The backend supports both local (Ollama) and non-local/cloud (Groq) LLM providers. This allows you to test and compare:
+- **Ollama:** Run LLMs locally for privacy and offline use
+- **Groq:** Use a cloud API for scalable, managed inference
+Switch providers via configuration or API parameters.

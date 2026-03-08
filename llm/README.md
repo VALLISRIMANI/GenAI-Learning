@@ -57,6 +57,9 @@ llm/
 ## LLM Abstraction Layer
 The LLM Factory in `core/llm_factory.py` abstracts provider selection. It allows seamless switching between Groq, OpenAI, or other compatible APIs. Developers can add new providers by extending the factory, keeping the service layer and API unchanged.
 
+## Local vs Non-Local LLM APIs
+This project demonstrates both local (Ollama) and non-local/cloud (Groq) LLM API integration. You can switch between providers to compare running LLMs on your own machine (Ollama) versus using a remote API (Groq). This is useful for development, cost, and privacy tradeoffs.
+
 ---
 
 > For backend and frontend details, see their respective README files.
