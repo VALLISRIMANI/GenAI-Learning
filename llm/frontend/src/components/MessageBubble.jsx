@@ -4,21 +4,27 @@ import CodeBlock from "./CodeBlock";
 import "./MessageBubble.css";
 
 function UserMessage({ content }) {
-  return <div className="user-message">{content}</div>;
+  return <div className="message-bubble">{content}</div>;
 }
 
 function BotMessage({ content }) {
   return (
-    <div className="bot-message">
+    <div className="message-bubble">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          code({node, inline, className, children, ...props}) {
-            return inline ? (
-              <code className={className} {...props}>{children}</code>
+          code(props) {
+            const {children, className, node, ...rest} = props
+            const match = /language-(\w+)/.exec(className || '')
+            return match ? (
+              <CodeBlock className={className} {...rest}>
+                {String(children).replace(/\n$/, '')}
+              </CodeBlock>
             ) : (
-              <CodeBlock className={className} {...props}>{children}</CodeBlock>
-            );
+              <code {...rest} className={className}>
+                {children}
+              </code>
+            )
           }
         }}
       >

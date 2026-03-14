@@ -1,17 +1,25 @@
+/* ====================================================================
+   Typing Indicator — Three bouncing dots
+   ==================================================================== */
+
 .typing-indicator {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin: 10px 0 10px 36px;
+  gap: 5px;
+  padding: 10px 16px;
+  background: #334155;
+  border-radius: 18px;
+  border-bottom-left-radius: 4px;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
 .typing-indicator span {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: rgba(226, 232, 240, 0.9);
-  animation: typing-wave 1.4s ease-in-out infinite;
+  background: #14b8a6;
+  animation: typingBounce 1.4s ease-in-out infinite;
 }
 
 .typing-indicator span:nth-child(1) {
@@ -26,21 +34,13 @@
   animation-delay: 0.3s;
 }
 
-@keyframes typing-wave {
-  0% {
+@keyframes typingBounce {
+  0%, 60%, 100% {
     transform: translateY(0);
-    opacity: 0.6;
+    opacity: 0.4;
   }
-  20% {
-    transform: translateY(-3px);
+  30% {
+    transform: translateY(-6px);
     opacity: 1;
-  }
-  40% {
-    transform: translateY(0);
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 0.6;
   }
 }

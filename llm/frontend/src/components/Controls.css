@@ -1,13 +1,14 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+/* ====================================================================
+   Controls — BotSelector, ModelSelector, TemperatureSlider, MemoryToggle
+   ==================================================================== */
 
+/* === SELECTOR GROUPS === */
 .bot-selector,
 .model-selector,
 .temperature-slider {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
 }
 
 .bot-selector label,
@@ -16,57 +17,60 @@
 .memory-toggle label {
   display: flex;
   align-items: center;
-  gap: 15px;
-  font-weight: 500;
-  font-size: 1rem;
-  color: #cbd5e1;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: #94a3b8;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
 }
 
 .bot-selector label i,
 .model-selector label i,
 .temperature-slider label i,
 .memory-toggle label i {
-  color: #60a5fa;
-  font-size: 1rem;
+  color: #14b8a6;
+  font-size: 0.85rem;
 }
 
+/* Selects */
 .bot-selector select,
 .model-selector select {
   width: 100%;
   min-width: 0;
   max-width: 100%;
-  padding: 12px 36px 12px 12px;
-  border: 2px solid rgba(148, 163, 184, 0.2);
+  padding: 10px 34px 10px 12px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 10px;
-  background: rgba(15, 23, 42, 0.5);
-  color: #b3cff4;
-  font-size: 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  color: #e2e8f0;
+  font-size: 0.88rem;
   font-family: 'Inter', system-ui, sans-serif;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
   appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2360a5fa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314b8a6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 10px center;
-  background-size: 1.2em;
-  overflow-wrap: break-word;
-  word-break: break-word;
+  background-size: 1.1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .bot-selector select:hover,
 .model-selector select:hover {
-  border-color: rgba(96, 165, 250, 0.4);
-  background-color: rgba(15, 23, 42, 0.7);
+  border-color: rgba(20, 184, 166, 0.4);
+  background-color: rgba(15, 23, 42, 0.8);
 }
 
 .bot-selector select:focus,
 .model-selector select:focus {
   outline: none;
-  border-color: #60a5fa;
+  border-color: #14b8a6;
   background-color: rgba(15, 23, 42, 0.9);
-  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.12);
 }
 
 .bot-selector select option,
@@ -74,141 +78,110 @@
   background: #1e293b;
   color: #e2e8f0;
   padding: 8px;
-  font-size: 0.8rem;
 }
 
+/* Temperature slider */
 .temperature-slider input[type="range"] {
   width: 100%;
   min-width: 0;
   max-width: 100%;
-  height: 6px;
+  height: 5px;
   margin-top: 8px;
   border-radius: 3px;
-  background: linear-gradient(to right, #60a5fa 0%, #a78bfa 100%);
+  background: linear-gradient(to right, #14b8a6 0%, #0f766e 100%);
   outline: none;
   appearance: none;
+  -webkit-appearance: none;
   cursor: pointer;
 }
 
 .temperature-slider input[type="range"]::-webkit-slider-thumb,
 .temperature-slider input[type="range"]::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  background: linear-gradient(135deg, #14b8a6 0%, #2dd4bf 100%);
   cursor: pointer;
   border: 2px solid #0f172a;
-  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(20, 184, 166, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .temperature-slider input[type="range"]::-webkit-slider-thumb:hover,
 .temperature-slider input[type="range"]::-moz-range-thumb:hover {
-  transform: scale(1.2);
-  box-shadow: 0 6px 16px rgba(96, 165, 250, 0.6);
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.6);
 }
 
+/* Memory toggle */
 .memory-toggle {
-  display: grid;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .memory-toggle-input {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .memory-toggle input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  margin: 20px 10px 20px 0;
+  width: 18px;
+  height: 18px;
+  margin: 0;
   cursor: pointer;
-  accent-color: #60a5fa;
+  accent-color: #14b8a6;
 }
 
 .memory-toggle span {
-  font-size: 1.2rem;
-  margin: 10px;
-  color: #b3cff4;
+  font-size: 0.9rem;
+  color: #cbd5e1;
 }
 
+/* Form group spacing */
 .form-group {
-  margin-bottom: 20px;
-  animation: fadeInUp 0.6s ease-out;
+  margin-bottom: 18px;
 }
 
-.form-group:nth-child(1) { animation-delay: 0.1s; }
-.form-group:nth-child(2) { animation-delay: 0.2s; }
-.form-group:nth-child(3) { animation-delay: 0.3s; }
-.form-group:nth-child(4) { animation-delay: 0.4s; }
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 480px) {
-  .memory-toggle label { font-size: 0.8rem; }
-  .memory-toggle span { font-size: 0.95rem; }
-  .form-group { margin-bottom: 12px; }
-}
-
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   .bot-selector label,
   .model-selector label,
   .temperature-slider label,
   .memory-toggle label {
-    font-size: 0.9rem;
-    gap: 12px;
+    font-size: 0.75rem;
+    gap: 6px;
   }
 
   .bot-selector select,
   .model-selector select {
-    padding: 10px 34px 10px 10px;
-    font-size: 0.9rem;
+    padding: 9px 32px 9px 10px;
+    font-size: 0.85rem;
   }
 
   .temperature-slider input[type="range"] {
-    height: 5px;
+    height: 4px;
   }
 
   .temperature-slider input[type="range"]::-webkit-slider-thumb,
   .temperature-slider input[type="range"]::-moz-range-thumb {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .bot-selector label,
-  .model-selector label,
-  .temperature-slider label,
-  .memory-toggle label {
-    font-size: 1rem;
-  }
-
-  .bot-selector select,
-  .model-selector select {
-    padding: 14px 38px 14px 14px;
-    font-size: 1.1rem;
-  }
-
-  .temperature-slider input[type="range"] {
-    height: 8px;
-  }
-
-  .temperature-slider input[type="range"]::-webkit-slider-thumb,
-  .temperature-slider input[type="range"]::-moz-range-thumb {
-    width: 22px;
-    height: 22px;
+    width: 16px;
+    height: 16px;
   }
 
   .memory-toggle input[type="checkbox"] {
-    width: 22px;
-    height: 22px;
+    width: 16px;
+    height: 16px;
   }
 
   .memory-toggle span {
-    font-size: 1.3rem;
+    font-size: 0.85rem;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
   }
 }

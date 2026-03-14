@@ -1,0 +1,50 @@
+/* src/styles/theme.css */
+
+:root {
+  /* Light Theme (Default) */
+  --color-primary: #0f766e;
+  --color-primary-hover: #0d9488;
+  --color-accent: #14b8a6;
+  --color-background: #f8fafc;
+  --color-card-bg: #ffffff;
+  --color-text-main: #0f172a;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+  
+  /* Message Colors (Light) */
+  --color-msg-user-bg: #0f766e;
+  --color-msg-user-text: #ffffff;
+  --color-msg-ai-bg: #f1f5f9;
+  --color-msg-ai-text: #0f172a;
+
+  /* UI Elements */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+  
+  --transition-speed: 0.2s;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme */
+  --color-primary: #14b8a6;
+  --color-primary-hover: #2dd4bf;
+  --color-accent: #0f766e;
+  --color-background: #0f172a;
+  --color-card-bg: #1e293b;
+  --color-text-main: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-border: #334155;
+  
+  /* Message Colors (Dark) */
+  --color-msg-user-bg: #0f766e;
+  --color-msg-user-text: #ffffff;
+  --color-msg-ai-bg: #334155;
+  --color-msg-ai-text: #f8fafc;
+
+  /* UI Elements */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
